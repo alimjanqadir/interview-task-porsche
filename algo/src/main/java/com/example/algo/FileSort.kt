@@ -2,7 +2,9 @@ package com.example.algo
 
 
 class Solution {
-    fun sort(files: Array<String>): List<String> {
+    fun sort(files: Array<String>): Array<String> {
+        require(files.isNotEmpty())
+
         return files.sortedWith { a, b ->
             val aSegmentedList = segmentToDigitsAndChars(a)
             val bSegmentedList = segmentToDigitsAndChars(b)
@@ -27,7 +29,7 @@ class Solution {
             }
 
             result
-        }
+        }.toTypedArray()
     }
 
     private fun segmentToDigitsAndChars(input: String): List<Int> {
@@ -84,21 +86,3 @@ class Solution {
     private fun isSequenceChangedToNumber(previousChar: Char?) =
         previousChar != null && !(previousChar.isDigit())
 }
-
-fun main() {
-    val input = arrayOf(
-        "file2.gif",
-        "file01.gif",
-        "1file.jpg",
-        "1file.gif",
-        "file10.gif",
-        "file1.gif",
-        "file1a.gif"
-    )
-
-    val solution = Solution()
-    val output = solution.sort(input)
-    println(output)
-}
-
-
