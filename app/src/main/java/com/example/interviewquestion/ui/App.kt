@@ -22,11 +22,12 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun App(mainActivityViewModel: MainActivityViewModel = koinViewModel()) {
-    /* Collecting flows in compose is extremely easy compare to activity
+    /** Collecting flows in compose is extremely easy compare to activity
      * This StateFlow is collected every time the lifecycleOwner's lifecycle reaches the
      * minActiveState Lifecycle state. The collection stops when the lifecycleOwner's
      * lifecycle falls below minActiveState, which is Lifecycle.State.STARTED,
-     * look at this diagram .
+     * look at below diagram.
+     * @see <a href="https://miro.medium.com/v2/0*_X0J2wnopl_wNEU8">diagram</a>.
      */
     val models by mainActivityViewModel.models.collectAsStateWithLifecycle()
     ModelList(models)
