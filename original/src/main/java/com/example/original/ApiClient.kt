@@ -10,7 +10,7 @@ interface ApiClient {
 
 // Use Koin for dependency injection
 val myModule = module {
-    factory { FakeApiClient() }
+    factory<ApiClient> { FakeApiClient() }
 }
 
 class FakeApiClient : ApiClient {

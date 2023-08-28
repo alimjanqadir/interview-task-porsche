@@ -1,4 +1,4 @@
-package com.example.interviewquestion.original
+package com.example.original
 
 import android.os.Bundle
 import android.util.Log
@@ -16,8 +16,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import com.example.original.ApiClient
-import com.example.original.MyApplicationTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -27,8 +25,10 @@ import kotlinx.coroutines.launch
 import org.koin.android.ext.android.get
 
 class MainActivity : ComponentActivity() {
-    // Data layer constructs all coupled with Activity)
+    // Data layer constructs coupled with Activity)
     var apiClient: ApiClient = get()
+
+    // Better encapsulated in a view model
     var msf: MutableStateFlow<List<String>> = MutableStateFlow(emptyList())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,8 +62,8 @@ class MainActivity : ComponentActivity() {
     }
 
     /*
-    * Wrong coding Convention, and UI bounded to Activity, seperation is needed.
-    * modifier paramenter is also not used.
+    * Wrong coding convention, and UI bounded to Activity, separation is needed.
+    * modifier parameter is also not used.
     * */
     @Composable
     fun showModelList(modifier: Modifier = Modifier) {
@@ -76,7 +76,7 @@ class MainActivity : ComponentActivity() {
     }
 
     /*
-    * UI bounded to Activity, seperation is needed.
+    * UI bounded to Activity, separation is needed.
     * */
     @Composable
     fun ListItem(item: String, modifier: Modifier = Modifier) {
