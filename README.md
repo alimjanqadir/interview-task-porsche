@@ -16,7 +16,7 @@ This also solves the unsafe data fetching using GlobalScope which not tied to an
 ![flow collection diagram](https://miro.medium.com/v2/0*_X0J2wnopl_wNEU8).
 
 
-ViewModel which contains ui state also hoised to the top level Compose component.
+ViewModel which contains ui state also hoisted to the top level Compose component.
 
 
 ## Project Structure:
@@ -29,7 +29,7 @@ Project code also splited to multiple modules using layer based modularizing arc
 
 Core module which contains 3 submodule data, data-test, and network.
 
-![core module](./core-module.png)
+![core module](docs/core-module.png)
 
 Data module contains data models and repositories for common for all other module above or in the same level.
 
@@ -47,14 +47,14 @@ Original module contains unchanged  interview question code example with some co
 
 App module is the important module that contains improved implementation of task 1. It includes instrumented ui test, main code that contains the task implementation.
 
-![app submodules](./app-module.png)
-![app mainmodule](./app-module-main-submodule.png)
+![app submodules](docs/app-module.png)
+![app mainmodule](docs/app-module-main-submodule.png)
 
 ## Algo Module
 
 Algo module contains the second task which I persume about sorting algorithms and Java Comparable and Comparator. It contains task  implementation and test.
 
-![algo module](./algo-module.png)
+![algo module](docs/algo-module.png)
 
 
 If you would like to know more about my architechture skills, below is recuruitment project that I did 5 years ago, which is a HackerNews demo that implements SST(Single Source Of Truth) with OfflineFirst repository using Room. Now it might not be much, butmy architecture ability only grow these 5 years.
