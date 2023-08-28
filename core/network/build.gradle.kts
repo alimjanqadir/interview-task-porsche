@@ -33,26 +33,23 @@ android {
 }
 
 dependencies {
-    implementation("io.insert-koin:koin-core:3.4.3")
-    implementation("io.insert-koin:koin-android:3.4.3")
-    implementation("io.insert-koin:koin-androidx-compose:3.4.3")
-    testImplementation("io.insert-koin:koin-test-junit4:3.4.3")
+    implementation(project(":core:data"))
 
-    implementation(project(mapOf("path" to ":core:data")))
+    // Koin
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+    testImplementation(libs.koin.test.junit4)
 
-    implementation("com.squareup.retrofit2:converter-gson:2.6.0")
-    implementation("com.squareup.retrofit2:retrofit:2.6.0")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.test)
 
-    implementation("io.insert-koin:koin-core:3.4.3")
-    implementation("io.insert-koin:koin-android:3.4.3")
-    implementation("io.insert-koin:koin-androidx-compose:3.4.3")
-    testImplementation("io.insert-koin:koin-test-junit4:3.4.3")
+    // retrofit
+    implementation(libs.converter.gson)
+    implementation(libs.retrofit)
 
-
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    // Testing
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
 }
