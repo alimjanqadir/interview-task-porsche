@@ -1,4 +1,4 @@
-package com.example.data.repository.fake
+package com.example.data_test.fake
 
 import com.example.data.repository.Repository
 import kotlinx.coroutines.flow.Flow
