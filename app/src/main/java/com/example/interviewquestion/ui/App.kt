@@ -12,6 +12,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.testTag
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.interviewquestion.MainActivityViewModel
@@ -26,7 +28,10 @@ fun App(mainActivityViewModel: MainActivityViewModel = koinViewModel()) {
 
 @Composable
 fun ModelList(models: List<String>, modifier: Modifier = Modifier) {
-    LazyColumn(modifier.fillMaxSize()) {
+    LazyColumn(
+        modifier
+            .fillMaxSize()
+            .semantics { testTag = "ModelList" }) {
         items(models) {
             ListItem(it)
         }
