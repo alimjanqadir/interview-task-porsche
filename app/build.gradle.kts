@@ -1,4 +1,3 @@
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -55,6 +54,9 @@ dependencies {
     val arch_version = "2.2.0"
     val lifecycle_version = "2.6.1"
 
+    implementation(project(":core:data"))
+    implementation(project(":core:network"))
+
     // Lifecycle utilities for Compose
     implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
@@ -65,8 +67,10 @@ dependencies {
     implementation("io.insert-koin:koin-android:3.4.3")
     implementation("io.insert-koin:koin-androidx-compose:3.4.3")
     testImplementation("io.insert-koin:koin-test-junit4:3.4.3")
+
     implementation("com.squareup.retrofit2:converter-gson:2.6.0")
     implementation("com.squareup.retrofit2:retrofit:2.6.0")
+
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")

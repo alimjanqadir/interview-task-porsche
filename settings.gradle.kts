@@ -15,3 +15,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "InterviewQuestion"
 include(":app")
+include(":core:data")
+include(":core:data-test")
+include(":core:network")
+include(":algo")
+include(":original")
