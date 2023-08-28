@@ -55,6 +55,7 @@ dependencies {
     val lifecycle_version = "2.6.1"
 
     implementation(project(":core:data"))
+    implementation(project(":core:data-test"))
     implementation(project(":core:network"))
 
     // Lifecycle utilities for Compose
